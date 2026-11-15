@@ -239,8 +239,9 @@
         .g-dot.active::before { width: 22px; background: #ffffff; }
         .g-dot.active { width: 38px; }
         .g-dot:focus-visible { outline: 2px solid #e3b07d; outline-offset: -3px; }
-        .g-frame video, .g-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .g-frame img { object-fit: contain; background: #ffffff; }
+        .g-frame video, .g-frame img { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: cover; display: block; }
+        .g-frame img { object-fit: contain; background: transparent; }
+        .g-bg { position: absolute; inset: -40px; background-size: cover; background-position: center; filter: blur(24px) brightness(.8) saturate(1.1); }
         @media (max-width: 900px) { .research-top { grid-template-columns: minmax(0, 1fr); gap: 24px; } }
     </style>
 </head>
@@ -302,6 +303,7 @@
             <figure class="gallery" id="gallery">
                 <div class="g-frame">
                     <video id="gVideo" src="media/testbed-video.mp4" poster="media/testbed-video-poster.jpg" autoplay muted playsinline preload="metadata" aria-label="Testbed video"></video>
+                    <div class="g-bg" id="gBg" aria-hidden="true" hidden></div>
                     <img id="gImage" alt="Testbed photo" hidden>
                     <div class="g-dots" role="group" aria-label="Choose video or photo">
                         <button type="button" class="g-dot active" data-type="video" aria-label="Video" aria-pressed="true"></button>
@@ -563,6 +565,7 @@
     (function () {
         const video = document.getElementById('gVideo');
         const image = document.getElementById('gImage');
+        const bgFill = document.getElementById('gBg');
         const dots = [...document.querySelectorAll('.g-dot')];
         const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         let current = 0, timer = null;
@@ -573,12 +576,13 @@
             dots.forEach((d, k) => { d.classList.toggle('active', k === current); d.setAttribute('aria-pressed', k === current); });
             const d = dots[current];
             if (d.dataset.type === 'video') {
-                image.hidden = true; video.hidden = false;
+                image.hidden = true; bgFill.hidden = true; video.hidden = false;
                 video.currentTime = 0;
                 if (!reduce) video.play().catch(() => {});
             } else {
                 video.pause(); video.hidden = true;
                 image.src = d.dataset.src; image.alt = d.dataset.alt || ''; image.hidden = false;
+                bgFill.style.backgroundImage = 'url("' + d.dataset.src + '")'; bgFill.hidden = false;
                 if (!reduce) timer = setTimeout(() => show(current + 1, true), 4000);
             }
         }
