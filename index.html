@@ -231,10 +231,14 @@
         .research-top .lead { margin: 0; }
         .gallery { margin: 0; }
         .g-frame { position: relative; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; background: #1b2d4a; }
-        .g-dots { position: absolute; left: 0; right: 0; bottom: 12px; display: flex; justify-content: center; gap: 8px; }
-        .g-dot { width: 9px; height: 9px; padding: 0; border: 0; border-radius: 50%; background: rgba(255,255,255,.55); cursor: pointer; transition: background .2s, width .2s; }
-        .g-dot:hover { background: rgba(255,255,255,.85); }
-        .g-dot.active { width: 22px; border-radius: 999px; background: #ffffff; }
+        .g-frame [hidden] { display: none !important; }
+        .g-dots { position: absolute; left: 50%; bottom: 8px; transform: translateX(-50%); display: flex; align-items: center; padding: 0 4px; border-radius: 999px; background: rgba(27,45,74,.55); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); z-index: 2; }
+        .g-dot { position: relative; width: 26px; height: 26px; padding: 0; margin: 0; border: 0; background: transparent; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; -webkit-tap-highlight-color: transparent; }
+        .g-dot::before { content: ""; width: 9px; height: 9px; border-radius: 999px; background: rgba(255,255,255,.6); transition: background .2s, width .2s; }
+        .g-dot:hover::before { background: rgba(255,255,255,.9); }
+        .g-dot.active::before { width: 22px; background: #ffffff; }
+        .g-dot.active { width: 38px; }
+        .g-dot:focus-visible { outline: 2px solid #e3b07d; outline-offset: -3px; }
         .g-frame video, .g-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
         .g-frame img { object-fit: contain; background: #ffffff; }
         @media (max-width: 900px) { .research-top { grid-template-columns: minmax(0, 1fr); gap: 24px; } }
@@ -579,7 +583,20 @@
             }
         }
         video.addEventListener('ended', () => { if (!reduce) show(current + 1, true); });
-        dots.forEach((d, k) => d.addEventListener('click', () => show(k)));
+        dots.forEach((d, k) => {
+            d.addEventListener('click', () => show(k));
+            d.addEventListener('keydown', (e) => {
+                let n = null;
+                if (e.key === 'ArrowRight' || e.key === 'ArrowDown') n = current + 1;
+                else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') n = current - 1;
+                else if (e.key === 'Home') n = 0;
+                else if (e.key === 'End') n = dots.length - 1;
+                if (n === null) return;
+                e.preventDefault();
+                show(n);
+                dots[current].focus();
+            });
+        });
     })();
 </script>
 </body>
