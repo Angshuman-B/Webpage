@@ -3,1495 +3,522 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angshuman Baruah : Researcher in Intelligent Transportation Systems</title>
-    <meta name="description" content="Doctoral Candidate at IIT Bombay specializing in Connected Autonomous Vehicles, Intelligent Transportation Systems, and Cyber-Physical Systems.">
+    <title>Angshuman Baruah · Connected and Autonomous Mobility, IIT Bombay</title>
+    <meta name="description" content="Angshuman Baruah is a PhD researcher at IIT Bombay working on cyber-physical testbeds, planning and safety validation for connected and autonomous vehicles in mixed traffic.">
+    <meta property="og:title" content="Angshuman Baruah · IIT Bombay">
+    <meta property="og:description" content="Cyber-physical testbeds, planning and safety for connected and autonomous vehicles in mixed traffic.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://angshuman-b.github.io/Webpage/">
+    <meta property="og:image" content="https://angshuman-b.github.io/Webpage/angshuman.jpg">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c2a44'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-size='30' fill='%23faf7f2'%3EAB%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* ===== RESET & BASE ===== */
+        /* Layout: calm single column of sections on warm paper, hairline rules, one accent colour */
+        :root {
+            --paper: #fbf8f3;
+            --panel: #f2ece2;
+            --white: #ffffff;
+            --ink: #1c2a44;
+            --ink-soft: #4f5a70;
+            --muted: #858c99;
+            --rule: #e7e0d5;
+            --accent: #b0562f;
+            --primary: #1c2a44;
+            --accent-soft: #f6e5da;
+            --ok: #3c6b4f;
+            --ok-soft: #e4eee7;
+            --wait: #85601a;
+            --wait-soft: #f5ecda;
+            --font-display: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #0a0a0a;
-            color: #f5f5f4;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-        a { color: #f5f5f4; text-decoration: none; transition: color 0.3s; }
-        a:hover { color: #f4ede3; }
+        html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+        body { font-family: var(--font-body); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; text-underline-offset: 3px; }
         img { max-width: 100%; display: block; }
-        ::selection { background: rgba(255,255,255,0.2); color: #f4ede3; }
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #0a0a0a; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+        ::selection { background: var(--accent-soft); }
+        :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
 
-        /* ===== UTILITY ===== */
-        .container { max-width: 1152px; margin: 0 auto; padding: 0 24px; }
-        .section { padding: 96px 0; }
-        .section-label {
-            font-size: 12px;
-            font-weight: 500;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: #78716c;
-            margin-bottom: 12px;
-        }
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 30px;
-            font-weight: 500;
-            letter-spacing: -0.025em;
-            color: #f4ede3;
-            margin-bottom: 48px;
-        }
-        .gradient-text {
-            background: linear-gradient(135deg, #d6d3d1 0%, #a8a29e 50%, #78716c 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .divider {
-            border: none;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            margin: 0;
-        }
-
-        /* ===== NAVIGATION ===== */
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 64px;
-            z-index: 100;
-            transition: background 0.3s, backdrop-filter 0.3s;
-        }
-        .nav.scrolled {
-            background: rgba(10,10,10,0.85);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        .nav-inner {
-            max-width: 1152px;
-            margin: 0 auto;
-            padding: 0 24px;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .nav-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 20px;
-            font-weight: 500;
-            color: #f4ede3;
-        }
-        .nav-links { display: flex; gap: 32px; list-style: none; }
-        .nav-links a {
-            font-size: 12px;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: #a8a29e;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover, .nav-links a.active { color: #f4ede3; }
-        .nav-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 4px;
-        }
-        .nav-toggle span {
-            width: 20px;
-            height: 1.5px;
-            background: #f5f5f4;
-            transition: 0.3s;
-        }
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 64px;
-            left: 0;
-            right: 0;
-            background: rgba(10,10,10,0.95);
-            backdrop-filter: blur(24px);
-            padding: 24px;
-            z-index: 99;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
+        /* Nav */
+        .nav { position: sticky; top: 0; z-index: 50; background: #1b2d4a; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid transparent; transition: border-color .3s; }
+        .nav.scrolled { border-bottom-color: var(--rule); }
+        .nav-inner { max-width: 1000px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-name { font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--ink); }
+        .nav-name:hover { text-decoration: none; }
+        .nav-links { display: flex; gap: 22px; list-style: none; }
+        .nav-links a { font-size: 14px; color: var(--ink-soft); }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent); text-decoration: none; }
+        .nav-toggle { display: none; background: none; border: 0; cursor: pointer; padding: 8px; margin-right: -8px; }
+        .nav-toggle span { display: block; width: 20px; height: 2px; background: var(--ink); margin: 4px 0; border-radius: 2px; }
+        .mobile-menu { display: none; border-top: 1px solid var(--rule); background: var(--paper); padding: 6px 24px 14px; }
         .mobile-menu.open { display: block; }
-        .mobile-menu a {
-            display: block;
-            padding: 12px 0;
-            font-size: 14px;
-            font-weight: 400;
-            color: #a8a29e;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        .mobile-menu a:last-child { border-bottom: none; }
-        .mobile-menu a:hover { color: #f4ede3; }
+        .mobile-menu a { display: block; padding: 11px 0; color: var(--ink-soft); border-bottom: 1px solid var(--rule); }
+        .mobile-menu a:last-child { border-bottom: 0; }
 
-        /* ===== HERO ===== */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 64px;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-        }
-        .hero-bg img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.08;
-            filter: grayscale(100%);
-        }
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, #0a0a0a 0%, rgba(10,10,10,0.6) 50%, rgba(10,10,10,0.3) 100%);
-            z-index: 1;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            max-width: 1152px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        .hero-tag {
-            font-size: 12px;
-            font-weight: 500;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: #a8a29e;
-            margin-bottom: 24px;
-        }
-        .hero-name {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(48px, 8vw, 96px);
-            font-weight: 400;
-            line-height: 0.9;
-            letter-spacing: -0.04em;
-            color: #f4ede3;
-            margin-bottom: 32px;
-        }
-        .hero-name em {
-            font-style: italic;
-            font-weight: 400;
-        }
-        .hero-desc {
-            font-size: 18px;
-            font-weight: 300;
-            line-height: 1.7;
-            color: #a8a29e;
-            max-width: 640px;
-            margin-bottom: 40px;
-        }
-        .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 16px 32px;
-            background: #f4ede3;
-            color: #000000;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(244,237,227,0.15);
-            color: #000000;
-        }
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 16px 32px;
-            background: transparent;
-            color: #f5f5f4;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            border: 1px solid rgba(255,255,255,0.2);
-            cursor: pointer;
-            transition: border-color 0.3s, transform 0.3s;
-        }
-        .btn-secondary:hover {
-            border-color: rgba(255,255,255,0.5);
-            transform: translateY(-2px);
-            color: #f4ede3;
-        }
+        /* Hero */
+        .hero { padding: 72px 0 64px; border-bottom: 1px solid var(--rule); }
+        .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 56px; align-items: center; }
+        .hello { font-family: var(--font-display); font-style: italic; font-size: 19px; color: var(--accent); margin-bottom: 6px; }
+        .hero h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(38px, 6vw, 60px); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 16px; }
+        .role { font-size: 16px; color: var(--ink-soft); margin-bottom: 22px; }
+        .role strong { color: var(--ink); font-weight: 600; }
+        .intro { font-size: 17.5px; line-height: 1.75; color: var(--ink-soft); max-width: 34em; margin-bottom: 28px; }
+        .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; }
+        .btn { display: inline-block; background: var(--primary); color: #fff; padding: 11px 22px; border-radius: 8px; font-size: 15px; font-weight: 500; transition: background .2s; }
+        .btn:hover { background: #13203a; color: #fff; text-decoration: none; }
+        .quick { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 15px; }
+        .quick a { color: var(--ink-soft); border-bottom: 1px solid var(--rule); padding-bottom: 1px; }
+        .quick a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+        .photo img { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 14px; }
 
-        /* ===== ABOUT ===== */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 64px;
-            align-items: start;
-        }
-        .about-text p {
-            font-size: 16px;
-            font-weight: 300;
-            line-height: 1.8;
-            color: #a8a29e;
-            margin-bottom: 20px;
-        }
-        .about-text p:last-child { margin-bottom: 0; }
-        .about-photo {
-            position: relative;
-        }
-        .about-photo-frame {
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.1);
-            aspect-ratio: 3/4;
-        }
-        .about-photo-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(30%);
-            transition: transform 0.7s ease-out, filter 0.7s ease-out;
-        }
-        .about-photo-frame:hover img {
-            transform: scale(1.05);
-            filter: grayscale(0%);
-        }
+        /* Sections */
+        section { padding: 72px 0; border-bottom: 1px solid var(--rule); }
+        section.tint { background: var(--panel); }
+        .label { font-size: 12.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+        h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(27px, 4vw, 36px); line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 28px; }
+        .lead { font-size: 17px; color: var(--ink-soft); max-width: 40em; margin: -12px 0 36px; }
 
-        /* ===== EDUCATION ===== */
-        .timeline { position: relative; padding-left: 32px; }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 7px;
-            top: 8px;
-            bottom: 8px;
-            width: 1px;
-            background: rgba(255,255,255,0.08);
-        }
-        .timeline-item { position: relative; margin-bottom: 48px; }
-        .timeline-item:last-child { margin-bottom: 0; }
-        .timeline-dot {
-            position: absolute;
-            left: -32px;
-            top: 6px;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            border: 2px solid #78716c;
-            background: #0a0a0a;
-        }
-        .timeline-item:first-child .timeline-dot {
-            border-color: #f4ede3;
-            background: #f4ede3;
-        }
-        .timeline-date {
-            font-size: 12px;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: #78716c;
-            margin-bottom: 8px;
-        }
-        .timeline-degree {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            font-weight: 500;
-            color: #f4ede3;
-            margin-bottom: 4px;
-        }
-        .timeline-institution {
-            font-size: 14px;
-            font-weight: 400;
-            color: #d6d3d1;
-            margin-bottom: 12px;
-        }
-        .timeline-details {
-            list-style: none;
-        }
-        .timeline-details li {
-            font-size: 14px;
-            font-weight: 300;
-            color: #a8a29e;
-            padding: 3px 0;
-        }
-        .timeline-details li strong {
-            font-weight: 500;
-            color: #d6d3d1;
-        }
-        .timeline-details a {
-            color: #d6d3d1;
-            text-decoration: underline;
-            text-decoration-color: rgba(168,162,158,0.4);
-            text-underline-offset: 3px;
-            transition: color 0.3s, text-decoration-color 0.3s;
-        }
-        .timeline-details a:hover {
-            color: #f4ede3;
-            text-decoration-color: #f4ede3;
-        }
+        /* Research */
+        .themes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+        .theme { border-top: 1px solid var(--ink); padding-top: 18px; }
+        .theme svg { width: 26px; height: 26px; color: var(--accent); margin-bottom: 12px; }
+        .theme h3 { font-family: var(--font-display); font-weight: 500; font-size: 20px; line-height: 1.3; margin-bottom: 6px; }
+        .theme p { font-size: 15px; color: var(--ink-soft); }
+        .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 36px; }
+        .chip { font-size: 14px; color: var(--ink-soft); background: var(--white); border: 1px solid var(--rule); border-radius: 999px; padding: 5px 14px; }
 
-        /* ===== AWARDS ===== */
-        .awards-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-        }
-        .award-card {
-            padding: 28px;
-            border: 1px solid rgba(255,255,255,0.05);
-            background: rgba(255,255,255,0.02);
-            transition: border-color 0.3s, transform 0.3s;
-        }
-        .award-card:hover {
-            border-color: rgba(255,255,255,0.15);
-            transform: translateY(-2px);
-        }
-        .award-icon {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.05);
-            margin-bottom: 16px;
-            color: #a8a29e;
-        }
-        .award-title {
-            font-size: 16px;
-            font-weight: 500;
-            color: #f4ede3;
-            margin-bottom: 6px;
-        }
-        .award-issuer {
-            font-size: 13px;
-            color: #78716c;
-            margin-bottom: 4px;
-        }
-        .award-year {
-            font-size: 12px;
-            font-weight: 500;
-            color: #a8a29e;
-            letter-spacing: 0.05em;
-        }
+        /* Lists shared by news, publications, projects, awards */
+        .rows { list-style: none; border-top: 1px solid var(--rule); }
+        .rows > li { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 24px; padding: 18px 0; border-bottom: 1px solid var(--rule); }
+        .when { font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+        .rows p { color: var(--ink-soft); }
+        .rows strong { color: var(--ink); font-weight: 600; }
 
-        /* ===== EXPERIENCE ===== */
-        .exp-grid { display: grid; gap: 16px; }
-        .exp-card {
-            display: grid;
-            grid-template-columns: 180px 1fr;
-            gap: 24px;
-            padding: 28px;
-            border: 1px solid rgba(255,255,255,0.05);
-            background: rgba(255,255,255,0.02);
-            transition: border-color 0.3s;
-        }
-        .exp-card:hover { border-color: rgba(255,255,255,0.15); }
-        .exp-year {
-            font-size: 12px;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            color: #78716c;
-            padding-top: 4px;
-        }
-        .exp-role {
-            font-size: 18px;
-            font-weight: 500;
-            color: #f4ede3;
-            margin-bottom: 4px;
-        }
-        .exp-org {
-            font-size: 14px;
-            color: #a8a29e;
-        }
+        /* Publications */
+        .tabs { display: inline-flex; gap: 4px; border: 1px solid var(--rule); background: var(--white); border-radius: 10px; padding: 4px; margin-bottom: 8px; }
+        .tab { border: 0; background: none; font: inherit; font-size: 14px; color: var(--ink-soft); padding: 7px 16px; border-radius: 7px; cursor: pointer; }
+        .tab.active { background: var(--ink); color: var(--paper); }
+        .tab .n { color: var(--muted); margin-left: 4px; }
+        .tab.active .n { color: #cfc4b8; }
+        .panel { display: none; }
+        .panel.active { display: block; }
+        .pub .venue { font-size: 13.5px; font-weight: 600; color: var(--accent); line-height: 1.45; }
+        .pub-title { font-family: var(--font-display); font-size: 18px; font-weight: 500; line-height: 1.4; color: var(--ink); margin-bottom: 4px; }
+        .authors { font-size: 14.5px; color: var(--ink-soft); }
+        .me { color: var(--ink); font-weight: 600; }
+        .status { display: inline-block; margin-top: 8px; font-size: 12.5px; font-weight: 500; padding: 2px 9px; border-radius: 6px; }
+        .status.ok { background: var(--ok-soft); color: var(--ok); }
+        .status.wait { background: var(--wait-soft); color: var(--wait); }
 
-        /* ===== RESEARCH INTERESTS ===== */
-        .interests-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-        .interest-tag {
-            padding: 12px 24px;
-            border: 1px solid rgba(255,255,255,0.1);
-            font-size: 14px;
-            font-weight: 400;
-            color: #d6d3d1;
-            transition: all 0.3s;
-            cursor: default;
-        }
-        .interest-tag:hover {
-            border-color: rgba(255,255,255,0.3);
-            background: rgba(255,255,255,0.05);
-            color: #f4ede3;
-        }
+        /* Patents */
+        .patents { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+        .patent { background: var(--white); border: 1px solid var(--rule); border-radius: 12px; padding: 22px 24px; }
+        .patent .meta { font-size: 13.5px; color: var(--muted); margin-bottom: 8px; font-variant-numeric: tabular-nums; }
+        .patent h3 { font-family: var(--font-display); font-weight: 500; font-size: 18.5px; line-height: 1.4; margin-bottom: 8px; }
+        .patent p { font-size: 14.5px; color: var(--ink-soft); }
 
-        /* ===== PUBLICATIONS ===== */
-        .pub-tabs {
-            display: flex;
-            gap: 4px;
-            margin-bottom: 40px;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            padding-bottom: 0;
-        }
-        .pub-tab {
-            padding: 12px 24px;
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: 0.03em;
-            color: #78716c;
-            background: none;
-            border: none;
-            cursor: pointer;
-            border-bottom: 2px solid transparent;
-            transition: all 0.3s;
-            margin-bottom: -1px;
-        }
-        .pub-tab.active {
-            color: #f4ede3;
-            border-bottom-color: #f4ede3;
-        }
-        .pub-tab:hover:not(.active) { color: #a8a29e; }
-        .pub-panel { display: none; }
-        .pub-panel.active { display: block; }
-        .pub-item {
-            padding: 24px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        .pub-item:last-child { border-bottom: none; }
-        .pub-status {
-            display: inline-block;
-            padding: 3px 10px;
-            font-size: 10px;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            border-radius: 2px;
-        }
-        .pub-status.accepted { background: rgba(34,197,94,0.15); color: #4ade80; }
-        .pub-status.under-review { background: rgba(234,179,8,0.15); color: #facc15; }
-        .pub-title {
-            font-size: 16px;
-            font-weight: 500;
-            color: #f4ede3;
-            line-height: 1.5;
-            margin-bottom: 8px;
-        }
-        .pub-authors {
-            font-size: 13px;
-            color: #78716c;
-            margin-bottom: 6px;
-            line-height: 1.5;
-        }
-        .pub-authors .author-self {
-            color: #d6d3d1;
-            font-weight: 500;
-            text-decoration: underline;
-            text-decoration-color: rgba(168,162,158,0.4);
-            text-underline-offset: 2px;
-        }
-        .pub-venue {
-            font-size: 13px;
-            color: #a8a29e;
-            font-style: italic;
-        }
+        /* Projects */
+        .projects { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; border-top: 1px solid var(--rule); }
+        .projects li { padding: 16px 0; border-bottom: 1px solid var(--rule); }
+        .projects h3 { font-size: 15.5px; font-weight: 600; line-height: 1.45; margin-bottom: 2px; }
+        .projects p { font-size: 14px; color: var(--muted); }
 
-        /* ===== PATENTS ===== */
-        .patent-item {
-            padding: 24px;
-            border: 1px solid rgba(255,255,255,0.05);
-            background: rgba(255,255,255,0.02);
-            margin-bottom: 16px;
-            transition: border-color 0.3s;
-        }
-        .patent-item:hover { border-color: rgba(255,255,255,0.15); }
-        .patent-item:last-child { margin-bottom: 0; }
-        .patent-number {
-            font-size: 11px;
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: #78716c;
-            margin-bottom: 8px;
-        }
-        .patent-title {
-            font-size: 16px;
-            font-weight: 500;
-            color: #f4ede3;
-            line-height: 1.5;
-            margin-bottom: 8px;
-        }
-        .patent-inventors {
-            font-size: 13px;
-            color: #a8a29e;
-        }
-        .patent-inventors .author-self {
-            color: #d6d3d1;
-            font-weight: 500;
-        }
+        /* Journey */
+        .journey { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; }
+        .journey h3 { font-family: var(--font-display); font-weight: 500; font-size: 21px; margin-bottom: 18px; }
+        .tl { list-style: none; border-left: 1px solid var(--rule); padding-left: 22px; }
+        .tl li { position: relative; padding-bottom: 22px; }
+        .tl li:last-child { padding-bottom: 0; }
+        .tl li::before { content: ''; position: absolute; left: -27px; top: 8px; width: 9px; height: 9px; border-radius: 50%; background: var(--paper); border: 2px solid var(--accent); }
+        .tint .tl li::before { background: var(--panel); }
+        .tl li:first-child::before { background: var(--accent); }
+        .tl .when { display: block; margin-bottom: 2px; }
+        .tl-title { font-weight: 600; line-height: 1.4; }
+        .tl-sub { font-size: 14.5px; color: var(--ink-soft); }
+        .tl-sub a { color: var(--ink-soft); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+        .tl-sub a:hover { color: var(--accent); text-decoration-color: var(--accent); }
 
-        /* ===== PROJECTS ===== */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-        .project-card {
-            position: relative;
-            padding: 28px;
-            border: 1px solid rgba(255,255,255,0.05);
-            background: rgba(255,255,255,0.02);
-            min-height: 200px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            transition: border-color 0.3s, transform 0.3s;
-            overflow: hidden;
-        }
-        .project-card:hover {
-            border-color: rgba(255,255,255,0.15);
-            transform: translateY(-4px);
-        }
-        .project-number {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-family: 'Playfair Display', serif;
-            font-size: 48px;
-            font-weight: 400;
-            color: rgba(255,255,255,0.04);
-            line-height: 1;
-        }
-        .project-name {
-            font-size: 18px;
-            font-weight: 500;
-            color: #f4ede3;
-            margin-bottom: 8px;
-        }
-        .project-tag {
-            font-size: 11px;
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: #78716c;
-        }
+        /* Awards */
+        .awards { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; border-top: 1px solid var(--rule); }
+        .awards li { display: flex; justify-content: space-between; gap: 16px; padding: 15px 0; border-bottom: 1px solid var(--rule); }
+        .award-title { font-weight: 600; line-height: 1.4; }
+        .award-org { font-size: 14px; color: var(--muted); }
+        .awards .when { flex: none; text-align: right; padding-top: 1px; }
 
-        /* ===== SKILLS ===== */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-        }
-        .skill-item {
-            padding: 16px 20px;
-            border: 1px solid rgba(255,255,255,0.05);
-            background: rgba(255,255,255,0.02);
-            text-align: center;
-            font-size: 13px;
-            font-weight: 400;
-            color: #d6d3d1;
-            transition: all 0.3s;
-        }
-        .skill-item:hover {
-            border-color: rgba(255,255,255,0.15);
-            color: #f4ede3;
-        }
+        /* About me */
+        .about { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; }
+        .about h3 { font-size: 15px; font-weight: 600; margin-bottom: 12px; }
+        .about .chips { margin-top: 0; }
 
-        /* ===== CONTACT ===== */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 64px;
-        }
-        .contact-info h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 500;
-            color: #f4ede3;
-            margin-bottom: 20px;
-        }
-        .contact-info p {
-            font-size: 16px;
-            font-weight: 300;
-            color: #a8a29e;
-            line-height: 1.7;
-            margin-bottom: 32px;
-        }
-        .contact-links { list-style: none; }
-        .contact-links li { margin-bottom: 16px; }
-        .contact-links a {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 15px;
-            color: #d6d3d1;
-            transition: color 0.3s;
-        }
-        .contact-links a:hover { color: #f4ede3; }
-        .contact-links .icon {
-            width: 20px;
-            height: 20px;
-            color: #78716c;
-        }
-        .contact-form { display: flex; flex-direction: column; gap: 20px; }
-        .form-field { display: flex; flex-direction: column; gap: 8px; }
-        .form-field label {
-            font-size: 12px;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: #78716c;
-        }
-        .form-field input,
-        .form-field textarea {
-            padding: 14px 16px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.1);
-            color: #f5f5f4;
-            font-family: 'Inter', sans-serif;
-            font-size: 14px;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-        .form-field input:focus,
-        .form-field textarea:focus {
-            border-color: rgba(255,255,255,0.3);
-        }
-        .form-field textarea { resize: vertical; min-height: 120px; }
-        .form-submit {
-            align-self: flex-start;
-            padding: 16px 40px;
-            background: #f4ede3;
-            color: #000000;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .form-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(244,237,227,0.15);
-        }
+        /* Contact */
+        .contact { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; }
+        .contact p { color: var(--ink-soft); margin-bottom: 20px; }
+        .contact-list { list-style: none; }
+        .contact-list li { padding: 10px 0; border-bottom: 1px solid var(--rule); }
+        .contact-list li:first-child { border-top: 1px solid var(--rule); }
+        .contact-list span { display: block; font-size: 13px; color: var(--muted); }
+        .contact-list a { color: var(--ink); overflow-wrap: anywhere; }
+        .contact-list a:hover { color: var(--accent); }
+        form { display: grid; gap: 12px; }
+        input, textarea { width: 100%; font: inherit; font-size: 15px; padding: 11px 13px; border: 1px solid var(--rule); border-radius: 8px; background: var(--white); color: var(--ink); outline: none; transition: border-color .2s; }
+        input:focus, textarea:focus { border-color: var(--accent); }
+        textarea { min-height: 130px; resize: vertical; }
+        form .btn { border: 0; cursor: pointer; font: inherit; font-weight: 500; justify-self: start; }
 
-        /* ===== FOOTER ===== */
-        .footer {
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding: 48px 0;
-        }
-        .footer-inner {
-            max-width: 1152px;
-            margin: 0 auto;
-            padding: 0 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .footer-left {
-            font-size: 13px;
-            color: #78716c;
-        }
-        .footer-socials { display: flex; gap: 16px; list-style: none; }
-        .footer-socials a {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(255,255,255,0.1);
-            color: #a8a29e;
-            transition: all 0.3s;
-        }
-        .footer-socials a:hover {
-            border-color: rgba(255,255,255,0.3);
-            color: #f4ede3;
-        }
+        footer { padding: 28px 0 36px; font-size: 13.5px; color: var(--muted); text-align: center; }
+        .toast { position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 12px); background: var(--ink); color: var(--paper); padding: 11px 18px; border-radius: 8px; font-size: 14px; opacity: 0; transition: .3s; pointer-events: none; z-index: 100; max-width: calc(100% - 32px); }
+        .toast.show { opacity: 1; transform: translate(-50%, 0); }
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
 
-        /* ===== ANIMATIONS ===== */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .fade-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ===== TOAST ===== */
-        .toast {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            padding: 16px 24px;
-            background: #f4ede3;
-            color: #000000;
-            font-size: 14px;
-            font-weight: 500;
-            z-index: 200;
-            transform: translateY(100px);
-            opacity: 0;
-            transition: all 0.4s ease-out;
-        }
-        .toast.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 1024px) {
-            .hero-stats { gap: 32px; }
-            .projects-grid { grid-template-columns: repeat(2, 1fr); }
-            .skills-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-        @media (max-width: 768px) {
-            .section { padding: 64px 0; }
+        /* Tablet */
+        @media (max-width: 900px) {
             .nav-links { display: none; }
-            .nav-toggle { display: flex; }
-            .hero-name { font-size: 48px; }
-            .hero-desc { font-size: 16px; }
-            .hero-stats { flex-direction: column; gap: 24px; }
-            .about-grid { grid-template-columns: 1fr; gap: 40px; }
-            .about-photo { order: -1; max-width: 320px; }
-            .awards-grid { grid-template-columns: 1fr; }
-            .exp-card { grid-template-columns: 1fr; gap: 8px; }
-            .projects-grid { grid-template-columns: 1fr; }
-            .skills-grid { grid-template-columns: repeat(2, 1fr); }
-            .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-            .footer-inner { flex-direction: column; gap: 20px; text-align: center; }
-            .section-title { font-size: 26px; }
-            .pub-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .nav-toggle { display: block; }
+            .hero-grid { grid-template-columns: minmax(0, 1fr) 260px; gap: 36px; }
+            .themes { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+            .journey, .contact { grid-template-columns: minmax(0, 1fr); gap: 40px; }
         }
-        @media (max-width: 480px) {
-            .hero-name { font-size: 36px; }
-            .hero-actions { flex-direction: column; }
-            .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+        /* Phone */
+        @media (max-width: 640px) {
+            .hero { padding: 36px 0 48px; }
+            .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+            .photo { order: -1; width: 180px; }
+            .photo img { aspect-ratio: 1; border-radius: 50%; }
+            .intro { font-size: 16.5px; }
+            section { padding: 52px 0; }
+            h2 { margin-bottom: 22px; }
+            .rows > li { grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 16px 0; }
+            .patents, .projects, .awards, .about { grid-template-columns: minmax(0, 1fr); }
+            .about { gap: 28px; }
         }
+
+        /* Navy hero */
+        h2, .hero h1, .nav-name { font-weight: 600; }
+        .nav { background: #1b2d4a; }
+        .nav.scrolled { border-bottom-color: rgba(255,255,255,.1); }
+        .nav-name { color: #f4efe6; }
+        .nav-links a { color: #c9d2df; }
+        .nav-links a:hover, .nav-links a.active { color: #e3b07d; }
+        .nav-toggle span { background: #f4efe6; }
+        .mobile-menu { background: #1b2d4a; border-top-color: rgba(255,255,255,.1); }
+        .mobile-menu a { color: #c9d2df; border-bottom-color: rgba(255,255,255,.1); }
+        .hero { background: #1b2d4a; border-bottom: 0; }
+        .hello { color: #e3b07d; }
+        .hero h1 { color: #f4efe6; }
+        .role { color: #c9d2df; }
+        .role strong { color: #ffffff; }
+        .intro { color: #c9d2df; }
+        .hero .btn { background: #e3b07d; color: #1b2d4a; font-weight: 600; }
+        .hero .btn:hover { background: #ecc296; }
+        .quick a { color: #dfe5ee; border-bottom-color: rgba(255,255,255,.3); }
+        .quick a:hover { color: #e3b07d; border-bottom-color: #e3b07d; }
+        .btn { background: #1c2a44; }
+        form .btn:hover { background: #13203a; }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="nav" id="navbar">
-        <div class="nav-inner">
-            <a href="#hero" class="nav-logo">AB</a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#patents">Patents</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
+<nav class="nav" id="navbar">
+    <div class="nav-inner">
+        <a href="#top" class="nav-name">Angshuman Baruah</a>
+        <ul class="nav-links">
+            <li><a href="#research">Research</a></li>
+                        <li><a href="#publications">Publications</a></li>
+            <li><a href="#patents">Patents</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#journey">Journey</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
     <div class="mobile-menu" id="mobileMenu">
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#experience">Experience</a>
-        <a href="#publications">Publications</a>
+        <a href="#research">Research</a>
+                <a href="#publications">Publications</a>
         <a href="#patents">Patents</a>
         <a href="#projects">Projects</a>
+        <a href="#journey">Journey</a>
+        <a href="#news">News</a>
         <a href="#contact">Contact</a>
     </div>
+</nav>
 
-    <!-- Hero -->
-    <section class="hero" id="hero">
-        <div class="hero-bg">
-            <img src="https://picsum.photos/seed/iitb-campus-research/1920/1080.jpg" alt="Research background">
-            <div class="hero-overlay"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-tag">PhD Candidate · IIT Bombay</div>
-            <h1 class="hero-name">
-                Angshuman<br><em class="gradient-text">Baruah</em>
-            </h1>
-            <p class="hero-desc">
-                Exploring the frontiers of Intelligent Transportation Systems, Connected Autonomous Vehicles and Cyber Physical Systems : Building the Future of Safer & Smarter Mobility.
-            </p>
-            <div class="hero-actions">
-                <a href="#publications" class="btn-primary">
-                    View Research
-                    <span class="iconify" data-icon="lucide:arrow-down-right" data-width="14"></span>
-                </a>
-                <a href="https://www.linkedin.com/in/angshuman-baruah-09/" target="_blank" rel="noopener" class="btn-secondary">
-                    LinkedIn
-                    <span class="iconify" data-icon="lucide:external-link" data-width="14"></span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About -->
-    <section class="section" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-text fade-up">
-                    <div class="section-label">About</div>
-                    <h2 class="section-title">Research & Vision</h2>
-                    <p>
-                        My research focuses on the fields of Intelligent Transportation Systems, Connected Autonomous Vehicles, Robotics, Traffic Control and Management and Transportation Safety.
-                    </p>
-                    <p>
-                        I am currently leading the development of a Connected Mobility Testbed for evaluating Connected and Autonomous Vehicles in mixed traffic environments at the Indian Institute of Technology Bombay.
-                    </p>
-                    <p>
-                        I have mentored several undergraduate and postgraduate students and am passionate about continuous learning. I enjoy exploring emerging concepts and methodologies to advance transportation research and develop innovative solutions for future mobility.
-                    </p>
-                </div>
-                <div class="about-photo fade-up">
-                    <div class="about-photo-frame">
-                        <img src="angshuman.jpg" alt="Angshuman Baruah">
-                    </div>
+<header class="hero" id="top">
+    <div class="container hero-grid">
+        <div>
+            <p class="hello">Hello, I'm</p>
+            <h1>Angshuman Baruah</h1>
+            <p class="role"><strong>PhD Candidate</strong>, Transportation Systems Engineering<br>Department of Civil Engineering, <strong>IIT Bombay</strong></p>
+            <p class="intro">My research is on connected and autonomous vehicles in mixed traffic: cyber-physical testbeds, motion planning and multi-agent coordination, and safety validation.</p>
+            <div class="actions">
+                <a href="#publications" class="btn">View publications</a>
+                <div class="quick">
+                    <a href="mailto:a.baruah@iitb.ac.in">Email</a>
+                    <a href="https://www.linkedin.com/in/angshuman-baruah-09/" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://github.com/angshuman-b" target="_blank" rel="noopener">GitHub</a>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="photo"><img src="angshuman.jpg" alt="Angshuman Baruah"></div>
+    </div>
+</header>
 
-    <hr class="divider">
+<section id="research" class="tint">
+    <div class="container">
+        <p class="label">Research</p>
+        <h2>What I work on</h2>
+        <p class="lead">I am working on a connected mobility testbed at IIT Bombay for evaluating connected and autonomous vehicles in mixed traffic. Alongside it, I work on planning, coordination and safety methods for these vehicles.</p>
+        <div class="themes">
+            <div class="theme">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M7 9h2M15 9h2M7 12h10"/></svg>
+                <h3>Cyber-physical testbeds</h3>
+                <p>Small-scale vehicles and simulation working together, for developing and validating connected and autonomous vehicles in mixed traffic.</p>
+            </div>
+            <div class="theme">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H14a4 4 0 0 0 0-8h-4a4 4 0 0 1 0-8h5.5"/></svg>
+                <h3>Planning and coordination</h3>
+                <p>Trajectory and path planning, and multi-agent reinforcement learning for unsignalised intersections.</p>
+            </div>
+            <div class="theme">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
+                <h3>Safety and Physical AI</h3>
+                <p>Safety validation of autonomous systems, and hardware for autonomous vehicles and road sensing.</p>
+            </div>
+        </div>
+        <div class="chips">
+            <span class="chip">Intelligent Transportation Systems</span>
+            <span class="chip">Robotics</span>
+            <span class="chip">Connected Autonomous Vehicles</span>
+            <span class="chip">Cyber Physical Systems</span>
+            <span class="chip">Transportation Safety</span>
+            <span class="chip">Traffic Control &amp; Management</span>
+            <span class="chip">Physical AI</span>
+        </div>
+    </div>
+</section>
 
-    <!-- Education -->
-    <section class="section" id="education">
-        <div class="container">
-            <div class="section-label fade-up">Education</div>
-            <h2 class="section-title fade-up">Academic Background</h2>
-            <div class="timeline fade-up">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2024 — Present</div>
-                    <div class="timeline-degree">Ph.D. in Transportation Systems Engineering</div>
-                    <div class="timeline-institution">Indian Institute of Technology Bombay, Mumbai</div>
-                    <ul class="timeline-details">
-                        <li><strong>Department:</strong> Civil Engineering Department</li>
-                        <li><strong>Thesis:</strong> Development of a Cyber-Physical Testing Environment for Connected Autonomous Vehicles</li>
-                        <li><strong>Advisor:</strong> <a href="https://homepages.iitb.ac.in/~archak/index.html" target="_blank" rel="noopener">Prof. Archak Mittal</a></li>
-                    </ul>
+<section id="publications">
+    <div class="container">
+        <p class="label">Publications</p>
+        <h2>Papers</h2>
+        <div class="tabs" role="tablist">
+            <button class="tab active" data-tab="conf" role="tab">Conferences<span class="n">9</span></button>
+            <button class="tab" data-tab="jour" role="tab">Journals<span class="n">5</span></button>
+        </div>
+
+        <ul class="rows panel active" id="conf">
+            <li class="pub"><span class="venue">IEEE IV 2027</span><div><div class="pub-title">VectorMerge: Raceline-Guided Reactive Planning for Autonomous Racing</div><div class="authors"><span class="me">Angshuman Baruah</span>, Shivam Singh Yadav, Avishkar Bahirwar, Archak Mittal</div><span class="status wait">Under review</span></div></li>
+            <li class="pub"><span class="venue">ICRA 2027</span><div><div class="pub-title">Decentralized Multi-Agent Coordination at Unsignalized Intersections with Full-Return MAPPO and Budgeted Counterfactual Credit Assignment</div><div class="authors"><span class="me">Angshuman Baruah</span>, Shivam Singh Yadav, Archak Mittal</div><span class="status wait">Under review</span></div></li>
+            <li class="pub"><span class="venue">ADVnet 2027</span><div><div class="pub-title">Trajectory Aware Cooperative MARL for Unsignalized Intersection Management</div><div class="authors"><span class="me">Angshuman Baruah</span>, Shivam Singh Yadav, Bharti Naheliya, Archak Mittal</div><span class="status wait">Under review</span></div></li>
+            <li class="pub"><span class="venue">ESTIC 2026</span><div><div class="pub-title">A Cyber-Physical Testbed for Development and Validation of Connected and Autonomous Mobility Systems</div><div class="authors">Saurabhkumar Patel, Shreyash Gadgil, <span class="me">Angshuman Baruah</span>, Archak Mittal</div><span class="status ok">Accepted</span></div></li>
+            <li class="pub"><span class="venue">WCTR 2026</span><div><div class="pub-title">Enhanced Chaos Gravitational Search Swarm Optimization for Path Planning in Connected Autonomous Vehicles</div><div class="authors">Bharti Naheliya, <span class="me">Angshuman Baruah</span>, Archak Mittal</div><span class="status ok">Accepted</span></div></li>
+            <li class="pub"><span class="venue">TRB 2026</span><div><div class="pub-title">Enhancing Traffic Flow Prediction with a Firefly-Optimized Deep Learning Model for Intelligent Transportation Applications</div><div class="authors">Bharti Naheliya, <span class="me">Angshuman Baruah</span>, Archak Mittal</div><span class="status ok">Accepted</span></div></li>
+            <li class="pub"><span class="venue">ITS India 2025</span><div><div class="pub-title">Development of a Cyber-Physical Environment for Connected Autonomous Vehicles</div><div class="authors"><span class="me">Angshuman Baruah</span>, Archak Mittal</div><span class="status ok">Accepted</span></div></li>
+            <li class="pub"><span class="venue">CTRG 2025</span><div><div class="pub-title">Connected and Autonomous Vehicles in Mixed Traffic Conditions: A Review of Small-Scale Testing Framework</div><div class="authors"><span class="me">Angshuman Baruah</span>, Bharti Naheliya, Archak Mittal</div><span class="status ok">Accepted</span></div></li>
+            <li class="pub"><span class="venue">RAID 2024</span><div><div class="pub-title">Pedestrian Crossing Warrants at Mid-Block Section of Urban Road</div><div class="authors"><span class="me">Angshuman Baruah</span>, Partha Pratim Dey, Pratap Kumar Pradhan, Thunga Vishnuvardhan Reddy</div><span class="status ok">Accepted</span></div></li>
+        </ul>
+
+        <ul class="rows panel" id="jour">
+            <li class="pub"><span class="venue">IEEE Transactions on Intelligent Vehicles</span><div><div class="pub-title">KAIROS: Real-Time Trajectory Planning for Safety-Aware Autonomous Vehicle Navigation in Urban Traffic</div><div class="authors"><span class="me">Angshuman Baruah</span>, Shivam Singh Yadav, Archak Mittal</div><span class="status wait">Under review</span></div></li>
+            <li class="pub"><span class="venue">Accident Analysis and Prevention</span><div><div class="pub-title">A Systematic Review of Small-Scale Cyber Physical Testbeds for Safety Validation of Connected and Autonomous Vehicles</div><div class="authors"><span class="me">Angshuman Baruah</span>, Bharti Naheliya, Archak Mittal</div><span class="status wait">Under review</span></div></li>
+            <li class="pub"><span class="venue">IEEE Transactions on Intelligent Transportation Systems</span><div><div class="pub-title">Survey on Path Planning Techniques for Connected Autonomous Vehicles: Advancing Towards Autonomous Mobility Solutions</div><div class="authors">Bharti Naheliya, <span class="me">Angshuman Baruah</span>, Archak Mittal</div><span class="status wait">Under review</span></div></li>
+            <li class="pub"><span class="venue">Swarm and Evolutionary Computation</span><div><div class="pub-title">A Chaotic Gravitational Search–Swarm Optimization Algorithm with Convergence Analysis for Connected Autonomous Vehicle Path Planning</div><div class="authors">Bharti Naheliya, <span class="me">Angshuman Baruah</span>, Archak Mittal</div><span class="status wait">Under review</span></div></li>
+            <li class="pub"><span class="venue">International Journal of Intelligent Transportation Systems Research</span><div><div class="pub-title">Firefly-Driven Deep Learning Framework for Complexity-Aware Neural Modeling of Traffic Flow Prediction</div><div class="authors">Bharti Naheliya, <span class="me">Angshuman Baruah</span>, Archak Mittal</div><span class="status ok">Accepted</span></div></li>
+        </ul>
+    </div>
+</section>
+
+<section id="patents" class="tint">
+    <div class="container">
+        <p class="label">Patents</p>
+        <h2>Patents filed</h2>
+        <div class="patents">
+            <div class="patent">
+                <div class="meta">Application 202621056299 · Filed 04-05-2026</div>
+                <h3>Non-Visible Structured-Light Surface Sensing for Three-Dimensional Substrate Profiling and Liquid-Filled Void Detection</h3>
+                <p>Archak Mittal, <span class="me">Angshuman Baruah</span></p>
+            </div>
+            <div class="patent">
+                <div class="meta">Application 202621057198 · Filed 05-05-2026</div>
+                <h3>Low-Resource Modular Autonomous Vehicle Platform</h3>
+                <p>Archak Mittal, <span class="me">Angshuman Baruah</span></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <div class="container">
+        <p class="label">Projects</p>
+        <h2>Projects undertaken</h2>
+        <ul class="projects">
+            <li><h3>LLM agents that generate driving scenarios in OpenSCENARIO 2.0</h3><p>KPIT</p></li>
+            <li><h3>RL-based scenario generation for safety-critical cases</h3><p>Mercedes-Benz Research &amp; Development India</p></li>
+            <li><h3>R&amp;D platform for advanced transportation technologies: concept, simulation and prototype</h3><p>IIT Bombay</p></li>
+            <li><h3>RoboRacer: autonomous racing</h3><p>UMIC SEDRICA, IIT Bombay</p></li>
+            <li><h3>Autonomous Buggy</h3><p>UMIC SEDRICA, IIT Bombay and Gahan AI</p></li>
+            <li><h3>Structural evaluation of pavement using FWD</h3><p>IIT Bhubaneswar</p></li>
+            <li><h3>Developing pedestrian crossing warrants</h3><p>IIT Bhubaneswar</p></li>
+            <li><h3>River embankments and seepage control</h3><p>Jorhat Engineering College</p></li>
+            <li><h3>Safer Roads for Safer Childhood</h3><p>IIT Guwahati and Global Road Safety Partnership</p></li>
+        </ul>
+    </div>
+</section>
+
+<section id="journey" class="tint">
+    <div class="container">
+        <p class="label">Journey</p>
+        <h2>Education and experience</h2>
+        <div class="journey">
+            <div>
+                <h3>Education</h3>
+                <ul class="tl">
+                    <li><span class="when">2024 – present</span><div class="tl-title">Ph.D., Transportation Systems Engineering</div><div class="tl-sub">IIT Bombay · Thesis: Development of a Cyber-Physical Testing Environment for Connected Autonomous Vehicles · Advisor: <a href="https://homepages.iitb.ac.in/~archak/index.html" target="_blank" rel="noopener">Prof. Archak Mittal</a></div></li>
+                    <li><span class="when">2022 – 2024</span><div class="tl-title">M.Tech., Transportation Engineering</div><div class="tl-sub">IIT Bhubaneswar · Thesis: Pedestrian Crossing Warrants at Mid-Block Section of Urban Road · Advisor: <a href="https://sif.iitbbs.ac.in/index.php/ppdey/" target="_blank" rel="noopener">Prof. Partha Pratim Dey</a></div></li>
+                    <li><span class="when">2017 – 2021</span><div class="tl-title">B.E., Civil Engineering</div><div class="tl-sub">Jorhat Engineering College, Assam · Thesis: A Numerical Study on River Embankments and Seepage Control Measures · Advisor: <a href="https://jecassam.ac.in/engineering/civil-engineering-department/civil-engineering-faculty/" target="_blank" rel="noopener">Prof. Arup Bhattacharjee</a></div></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Experience</h3>
+                <ul class="tl">
+                    <li><span class="when">Aug 2024 – present</span><div class="tl-title">PhD Mentor</div><div class="tl-sub">SEDRICA, Unmesh Mashruwala Innovation Cell, IIT Bombay</div></li>
+                    <li><span class="when">Dec 2025</span><div class="tl-title">Research Exchange</div><div class="tl-sub">Tohoku University, Japan</div></li>
+                    <li><span class="when">Jan 2025</span><div class="tl-title">Research Exchange</div><div class="tl-sub">University of the Bundeswehr Munich, Germany</div></li>
+                    <li><span class="when">Jun – Aug 2020</span><div class="tl-title">Research Intern</div><div class="tl-sub">Central Building Research Institute (CBRI), Roorkee</div></li>
+                    <li><span class="when">Dec 2019 – Jan 2020</span><div class="tl-title">Industry Intern</div><div class="tl-sub">National Highways and Infrastructure Development Corporation, Jorhat</div></li>
+                    <li><span class="when">Jan – Feb 2019</span><div class="tl-title">Industry Intern</div><div class="tl-sub">Public Works Roads Department, Guwahati</div></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="awards">
+    <div class="container">
+        <p class="label">Recognition</p>
+        <h2>Honours and awards</h2>
+        <ul class="awards">
+            <li><div><div class="award-title">Bursary Award</div><div class="award-org">World Conference on Transport Research, Toulouse, France</div></div><span class="when">2026</span></li>
+            <li><div><div class="award-title">Best Paper Award (2nd position)</div><div class="award-org">ITS India Congress, Hyderabad</div></div><span class="when">2025</span></li>
+            <li><div><div class="award-title">FedEx Doctoral Fellowship</div><div class="award-org">IIT Bombay FedEx ALFA</div></div><span class="when">2025 – 2029</span></li>
+            <li><div><div class="award-title">Teaching Assistantship (Project)</div><div class="award-org">IRCC, IIT Bombay</div></div><span class="when">2024 – 2025</span></li>
+            <li><div><div class="award-title">GATE Fellowship</div><div class="award-org">AICTE, Government of India</div></div><span class="when">2022 – 2024</span></li>
+            <li><div><div class="award-title">ISHAN UDAY Scholarship</div><div class="award-org">UGC, Government of India</div></div><span class="when">2017 – 2021</span></li>
+            <li><div><div class="award-title">Anundoram Borooah Award</div><div class="award-org">Government of Assam</div></div><span class="when">2015</span></li>
+        </ul>
+    </div>
+</section>
+
+<section id="news" class="tint">
+    <div class="container">
+        <p class="label">News</p>
+        <h2>Recent news</h2>
+        <ul class="rows">
+            <li><span class="when">Oct 2026</span><p>Presented <strong>"A Cyber-Physical Testbed for Development and Validation of Connected and Autonomous Mobility Systems"</strong> at ESTIC 2026, New Delhi.</p></li>
+            <li><span class="when">2026</span><p>Received the <strong>Bursary Award</strong> from the World Conference on Transport Research, Toulouse, France.</p></li>
+            <li><span class="when">Dec 2025</span><p>Research exchange at <strong>Tohoku University</strong>, Japan.</p></li>
+            <li><span class="when">2025</span><p>Won the <strong>Best Paper Award (2nd position)</strong> at the ITS India Congress, Hyderabad.</p></li>
+            <li><span class="when">2025</span><p>Awarded the <strong>FedEx Doctoral Fellowship</strong> (2025 to 2029) by IIT Bombay FedEx ALFA.</p></li>
+        </ul>
+    </div>
+</section>
+
+<section id="about-me">
+    <div class="container">
+        <p class="label">Beyond research</p>
+        <h2>A little about me</h2>
+        <div class="about">
+            <div>
+                <h3>How I work</h3>
+                <div class="chips">
+                    <span class="chip">Leadership</span><span class="chip">Teamwork</span><span class="chip">Public Speaking</span><span class="chip">Interpersonal Skills</span><span class="chip">Collaboration</span><span class="chip">Critical Thinking</span><span class="chip">Adaptability</span>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2022 — 2024</div>
-                    <div class="timeline-degree">M.Tech. in Transportation Engineering</div>
-                    <div class="timeline-institution">Indian Institute of Technology Bhubaneswar, Odisha</div>
-                    <ul class="timeline-details">
-                        <li><strong>Department:</strong> School of Infrastructure</li>
-                        <li><strong>Thesis:</strong> Pedestrian Crossing Warrants at Mid-Block Section of Urban Road</li>
-                        <li><strong>Advisor:</strong> <a href="https://sif.iitbbs.ac.in/index.php/ppdey/" target="_blank" rel="noopener">Prof. Partha Pratim Dey</a></li>
-                    </ul>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2017 — 2021</div>
-                    <div class="timeline-degree">B.E. in Civil Engineering</div>
-                    <div class="timeline-institution">Jorhat Engineering College, Assam</div>
-                    <ul class="timeline-details">
-                        <li><strong>Department:</strong> Civil Engineering Department</li>
-                        <li><strong>Thesis:</strong> A Numerical Study on River Embankments and Seepage Control Measures</li>
-                        <li><strong>Advisor:</strong> <a href="https://jecassam.ac.in/engineering/civil-engineering-department/civil-engineering-faculty/" target="_blank" rel="noopener">Prof. Arup Bhattacharjee</a></li>
-                    </ul>
+            </div>
+            <div>
+                <h3>When I'm not in the lab</h3>
+                <div class="chips">
+                    <span class="chip">Football</span><span class="chip">Swimming</span><span class="chip">Badminton</span><span class="chip">Reading</span><span class="chip">Travelling</span><span class="chip">Cooking</span>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <hr class="divider">
-
-    <!-- Honours & Awards -->
-    <section class="section" id="awards">
-        <div class="container">
-            <div class="section-label fade-up">Recognition</div>
-            <h2 class="section-title fade-up">Honours & Awards</h2>
-            <div class="awards-grid fade-up">
-                <div class="award-card">
-                    <div class="award-icon">
-                        <span class="iconify" data-icon="lucide:award" data-width="18"></span>
-                    </div>
-                    <div class="award-title">Bursary Award</div>
-                    <div class="award-issuer">World Conference on Transport Research, Toulouse, France</div>
-                    <div class="award-year">2026</div>
-                </div>
-                <div class="award-card">
-                    <div class="award-icon">
-                        <span class="iconify" data-icon="lucide:award" data-width="18"></span>
-                    </div>
-                    <div class="award-title">Best Paper Award (2nd Position)</div>
-                    <div class="award-issuer">ITS India Congress, Hyderabad</div>
-                    <div class="award-year">2025</div>
-                </div>                
-                <div class="award-card">
-                    <div class="award-icon">
-                        <span class="iconify" data-icon="lucide:award" data-width="18"></span>
-                    </div>
-                    <div class="award-title">FedEx Doctoral Fellowship</div>
-                    <div class="award-issuer">IIT Bombay FedEx ALFA</div>
-                    <div class="award-year">2025 — 2029</div>
-                </div>
-                <div class="award-card">
-                    <div class="award-icon">
-                        <span class="iconify" data-icon="lucide:book-open" data-width="18"></span>
-                    </div>
-                    <div class="award-title">Teaching Assistantship (Project)</div>
-                    <div class="award-issuer">IRCC IIT Bombay</div>
-                    <div class="award-year">2024 — 2025</div>
-                </div>
-                <div class="award-card">
-                    <div class="award-icon">
-                        <span class="iconify" data-icon="lucide:graduation-cap" data-width="18"></span>
-                    </div>
-                    <div class="award-title">GATE Fellowship</div>
-                    <div class="award-issuer">AICTE (Govt. of India)</div>
-                    <div class="award-year">2022 — 2024</div>
-                </div>
-                <div class="award-card">
-                    <div class="award-icon">
-                        <span class="iconify" data-icon="lucide:landmark" data-width="18"></span>
-                    </div>
-                    <div class="award-title">ISHAN UDAY Scholarship</div>
-                    <div class="award-issuer">UGC (Govt. of India)</div>
-                    <div class="award-year">2017 — 2021</div>
-                </div>
-                <div class="award-card">
-                    <div class="award-icon">
-                        <span class="iconify" data-icon="lucide:trophy" data-width="18"></span>
-                    </div>
-                    <div class="award-title">Anundoram Borooah Award</div>
-                    <div class="award-issuer">Government of Assam, India</div>
-                    <div class="award-year">2015</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <hr class="divider">
-
-    <!-- Experience -->
-    <section class="section" id="experience">
-        <div class="container">
-            <div class="section-label fade-up">Experience</div>
-            <h2 class="section-title fade-up">Professional & Research Journey</h2>
-            <div class="exp-grid fade-up">
-                <div class="exp-card">
-                    <div class="exp-year">Aug 2024 — Present</div>
-                    <div>
-                        <div class="exp-role">PhD Mentor</div>
-                        <div class="exp-org">SEDRICA — Unmesh Mashruwala Innovation Cell, IIT Bombay</div>
-                    </div>
-                </div>
-                <div class="exp-card">
-                    <div class="exp-year">Dec 2025</div>
-                    <div>
-                        <div class="exp-role">Research Exchange</div>
-                        <div class="exp-org">Tohoku University, Japan</div>
-                    </div>
-                </div>
-                <div class="exp-card">
-                    <div class="exp-year">Jan 2025</div>
-                    <div>
-                        <div class="exp-role">Research Exchange</div>
-                        <div class="exp-org">University of the Bundeswehr Munich, Germany</div>
-                    </div>
-                </div>
-                <div class="exp-card">
-                    <div class="exp-year">Jun 2020 — Aug 2020</div>
-                    <div>
-                        <div class="exp-role">Research Intern</div>
-                        <div class="exp-org">Central Building Research Institute (CBRI), Roorkee, Uttarakhand</div>
-                    </div>
-                </div>
-                <div class="exp-card">
-                    <div class="exp-year">Dec 2019 — Jan 2020</div>
-                    <div>
-                        <div class="exp-role">Industry Intern</div>
-                        <div class="exp-org">National Highways and Infrastructure Development Corporation, Jorhat, Assam</div>
-                    </div>
-                </div>
-                <div class="exp-card">
-                    <div class="exp-year">Jan 2019 — Feb 2019</div>
-                    <div>
-                        <div class="exp-role">Industry Intern</div>
-                        <div class="exp-org">Public Works Roads Department, Guwahati, Assam</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <hr class="divider">
-
-    <!-- Research Interests -->
-    <section class="section" id="interests">
-        <div class="container">
-            <div class="section-label fade-up">Specialization</div>
-            <h2 class="section-title fade-up">Research Interests</h2>
-            <div class="skills-grid fade-up">
-                <div class="skill-item">Intelligent Transportation Systems</div>
-                <div class="skill-item">Robotics</div>
-                <div class="skill-item">Connected Autonomous Vehicles</div>
-                <div class="skill-item">Cyber Physical Systems</div>
-                <div class="skill-item">Transportation Safety</div>
-                <div class="skill-item">Traffic Control & Management</div>
-                <div class="skill-item">Physical AI</div>
-            </div>
-        </div>
-    </section>
-
-    <hr class="divider">
-
-    <!-- Publications -->
-    <section class="section" id="publications">
-        <div class="container">
-            <div class="section-label fade-up">Research Output</div>
-            <h2 class="section-title fade-up">Publications</h2>
-            <div class="pub-tabs fade-up">
-                <button class="pub-tab active" data-tab="conferences">Conferences</button>
-                <button class="pub-tab" data-tab="journals">Journals</button>
-            </div>
-
-            <!-- Conferences -->
-            <div class="pub-panel active" id="conferences">
-                <div class="pub-item">
-                    <span class="pub-status accepted">Accepted</span>
-                    <div class="pub-title">Pedestrian Crossing Warrants at Mid-Block Section of Urban Road</div>
-                    <div class="pub-authors"><span class="author-self">Angshuman Baruah</span>, Partha Pratim Dey, Pratap Kumar Pradhan, Thunga Vishnuvardhan Reddy</div>
-                    <div class="pub-venue">RAID 2024</div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-status accepted">Accepted</span>
-                    <div class="pub-title">Connected and Autonomous Vehicles in Mixed Traffic Conditions: A Review of Small-Scale Testing Framework</div>
-                    <div class="pub-authors"><span class="author-self">Angshuman Baruah</span>, Bharti Naheliya, Archak Mittal</div>
-                    <div class="pub-venue">CTRG 2025</div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-status accepted">Accepted</span>
-                    <div class="pub-title">Development of a Cyber-Physical Environment for Connected Autonomous Vehicles</div>
-                    <div class="pub-authors"><span class="author-self">Angshuman Baruah</span>, Archak Mittal</div>
-                    <div class="pub-venue">ITS INDIA 2025</div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-status accepted">Accepted</span>
-                    <div class="pub-title">Enhancing Traffic Flow Prediction with a Firefly-Optimized Deep Learning Model for Intelligent Transportation Applications</div>
-                    <div class="pub-authors">Bharti Naheliya, <span class="author-self">Angshuman Baruah</span>, Archak Mittal</div>
-                    <div class="pub-venue">TRB 2026</div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-status accepted">Accepted</span>
-                    <div class="pub-title">Enhanced Chaos Gravitational Search Swarm Optimization for Path Planning in Connected Autonomous Vehicles</div>
-                    <div class="pub-authors">Bharti Naheliya, <span class="author-self">Angshuman Baruah</span>, Archak Mittal</div>
-                    <div class="pub-venue">WCTR 2026</div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-status accepted">Accepted</span>
-                    <div class="pub-title">A Cyber-Physical Testbed for Development and Validation of Connected and Autonomous Mobility Systems</div>
-                    <div class="pub-authors">Saurabhkumar Patel, Shreyash Gadgil, <span class="author-self">Angshuman Baruah</span>, Archak Mittal</div>
-                    <div class="pub-venue">ESTIC 2026</div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-status under-review">Under Review</span>
-                    <div class="pub-title">Decentralized Multi-Agent Coordination at Unsignalized Intersections with Full-Return MAPPO and Budgeted Counterfactual Credit Assignment</div>
-                    <div class="pub-authors"><span class="author-self">Angshuman Baruah</span>, Shivam Singh Yadav, Archak Mittal</div>
-                    <div class="pub-venue">ICRA 2027</div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-status under-review">Under Review</span>
-                    <div class="pub-title">Trajectory Aware Cooperative MARL for Unsignalized Intersection Management</div>
-                    <div class="pub-authors"><span class="author-self">Angshuman Baruah</span>, Shivam Singh Yadav, Bharti Naheliya, Archak Mittal</div>
-                    <div class="pub-venue">ADVnet 2027</div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-status under-review">Under Review</span>
-                    <div class="pub-title">VectorMerge: Raceline-Guided Reactive Planning for Autonomous Racing</div>
-                    <div class="pub-authors"><span class="author-self">Angshuman Baruah</span>, Shivam Singh Yadav, Avishkar Bahirwar, Archak Mittal</div>
-                    <div class="pub-venue">IEEE IV 2027</div>
-                </div>
-            </div>
-
-            <!-- Journals -->
-            <div class="pub-panel" id="journals">
-                <div class="pub-item">
-                    <span class="pub-status under-review">Under Review</span>
-                    <div class="pub-title">KAIROS: Real-Time Trajectory Planning for Safety-Aware Autonomous Vehicle Navigation in Urban Traffic</div>
-                    <div class="pub-authors"><span class="author-self">Angshuman Baruah</span>, Shivam Singh Yadav, Archak Mittal</div>
-                    <div class="pub-venue">IEEE Transactions on Intelligent Vehicles</div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-status under-review">Under Review</span>
-                    <div class="pub-title">A Systematic Review of Small-Scale Cyber Physical Testbeds for Safety Validation of Connected and Autonomous Vehicles</div>
-                    <div class="pub-authors"><span class="author-self">Angshuman Baruah</span>, Bharti Naheliya, Archak Mittal</div>
-                    <div class="pub-venue">Accident Analysis and Prevention</div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-status under-review">Under Review</span>
-                    <div class="pub-title">Survey on Path Planning Techniques for Connected Autonomous Vehicles: Advancing Towards Autonomous Mobility Solutions</div>
-                    <div class="pub-authors">Bharti Naheliya, <span class="author-self">Angshuman Baruah</span>, Archak Mittal</div>
-                    <div class="pub-venue">IEEE ITS</div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-status under-review">Under Review</span>
-                    <div class="pub-title">A Chaotic Gravitational Search–Swarm Optimization Algorithm with Convergence Analysis for Connected Autonomous Vehicle Path Planning</div>
-                    <div class="pub-authors">Bharti Naheliya, <span class="author-self">Angshuman Baruah</span>, Archak Mittal</div>
-                    <div class="pub-venue">Swarm and Evolutionary Computation</div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-status accepted">Accepted</span>
-                    <div class="pub-title">Firefly-Driven Deep Learning Framework for Complexity-Aware Neural Modeling of Traffic Flow Prediction</div>
-                    <div class="pub-authors">Bharti Naheliya, <span class="author-self">Angshuman Baruah</span>, Archak Mittal</div>
-                    <div class="pub-venue">International Journal of Intelligent Transportation Systems Research</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <hr class="divider">
-
-    <!-- Patents -->
-    <section class="section" id="patents">
-        <div class="container">
-            <div class="section-label fade-up">Intellectual Property</div>
-            <h2 class="section-title fade-up">Patents Filed</h2>
-            <div class="fade-up">
-                <div class="patent-item">
-                    <div class="patent-number">Patent #202621056299 · Filed 04-05-2026</div>
-                    <div class="patent-title">Non-Visible Structured-Light Surface Sensing for Three-Dimensional Substrate Profiling and Liquid-Filled Void Detection</div>
-                    <div class="patent-inventors">Inventors: Archak Mittal, <span class="author-self">Angshuman Baruah</span></div>
-                </div>
-                <div class="patent-item">
-                    <div class="patent-number">Patent #202621057198 · Filed 05-05-2026</div>
-                    <div class="patent-title">Low-Resource Modular Autonomous Vehicle Platform</div>
-                    <div class="patent-inventors">Inventors: Archak Mittal, <span class="author-self">Angshuman Baruah</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <hr class="divider">
-
-    <!-- Projects -->
-    <section class="section" id="projects">
-        <div class="container">
-            <div class="section-label fade-up">Work</div>
-            <h2 class="section-title fade-up">Projects Undertaken</h2>
-            <div class="projects-grid fade-up">
-                <div class="project-card">
-                    <div class="project-number">01</div>
-                    <div class="project-name">LLM agent development to generate scenarios in OpenScenario 2.0</div>
-                    <div class="project-tag">KPIT</div>
-                </div>
-                <div class="project-card">
-                    <div class="project-number">02</div>
-                    <div class="project-name">Development of RL based Scenario generation framework for Safety critical cases</div>
-                    <div class="project-tag">Mercedes-Benz Research & Development India</div>
-                </div>
-                <div class="project-card">
-                    <div class="project-number">03</div>
-                    <div class="project-name">RoboRacer</div>
-                    <div class="project-tag">Autonomous Vehicle Racing Competition</div>
-                </div>
-                <div class="project-card">
-                    <div class="project-number">04</div>
-                    <div class="project-name">Autonomous Buggy</div>
-                    <div class="project-tag">Development of an Autonomous Campus Shuttle</div>
-                </div>
-                <div class="project-card">
-                    <div class="project-number">05</div>
-                    <div class="project-name">Structural Evaluation of Pavement Using FWD</div>
-                    <div class="project-tag">Pavement Engineering</div>
-                </div>
-                <div class="project-card">
-                    <div class="project-number">06</div>
-                    <div class="project-name">Developing Pedestrian Crossing Warrants</div>
-                    <div class="project-tag">Traffic Safety</div>
-                </div>
-                <div class="project-card">
-                    <div class="project-number">07</div>
-                    <div class="project-name">River Embankments & Seepage Control</div>
-                    <div class="project-tag">Geotechnical Engineering</div>
-                </div>
-                <div class="project-card">
-                    <div class="project-number">08</div>
-                    <div class="project-name">Safer Roads for Safer Childhood</div>
-                    <div class="project-tag">Transportation Safety</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <hr class="divider">
-
-    <!-- Soft Skills -->
-    <section class="section" id="skills">
-        <div class="container">
-            <div class="section-label fade-up">Capabilities</div>
-            <h2 class="section-title fade-up">Soft Skills</h2>
-            <div class="skills-grid fade-up">
-                <div class="skill-item">Leadership</div>
-                <div class="skill-item">Teamwork</div>
-                <div class="skill-item">Public Speaking</div>
-                <div class="skill-item">Interpersonal Skills</div>
-                <div class="skill-item">Collaboration</div>
-                <div class="skill-item">Critical Thinking</div>
-                <div class="skill-item">Adaptability</div>
-            </div>
-        </div>
-    </section>
-
-    <hr class="divider">
-
-    <!-- Hobbies -->
-    <section class="section" id="hobbies">
-        <div class="container">
-            <div class="section-label fade-up">Beyond Research</div>
-            <h2 class="section-title fade-up">Hobbies</h2>
-            <div class="skills-grid fade-up">
-                <div class="skill-item">Football</div>
-                <div class="skill-item">Swimming</div>
-                <div class="skill-item">Badminton</div>
-                <div class="skill-item">Reading</div>
-                <div class="skill-item">Travelling</div>
-                <div class="skill-item">Cooking</div>
-            </div>
-        </div>
-    </section>
-
-    <hr class="divider">
-
-    <!-- Contact -->
-    <section class="section" id="contact">
-        <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info fade-up">
-                    <div class="section-label">Get in Touch</div>
-                    <h3>Let's Connect</h3>
-                    <p>Whether you're interested in collaboration, research discussions, or academic opportunities, I'd love to hear from you.</p>
-                    <ul class="contact-links">
-                        <li>
-                            <a href="mailto:angshumanbaruah12@gmail.com">
-                                <span class="iconify icon" data-icon="lucide:mail" data-width="18"></span>
-                                angshumanbaruah12@gmail.com
-                            </a>
-                        </li>
-                        <li>
-                            <a href="mailto:a.baruah@iitb.ac.in">
-                                <span class="iconify icon" data-icon="lucide:inbox" data-width="18"></span>
-                                a.baruah@iitb.ac.in
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/angshuman-baruah-09/" target="_blank" rel="noopener">
-                                <span class="iconify icon" data-icon="lucide:linkedin" data-width="18"></span>
-                                linkedin.com/in/angshuman-baruah-09
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.civil.iitb.ac.in/" target="_blank" rel="noopener">
-                                <span class="iconify icon" data-icon="lucide:building-2" data-width="18"></span>
-                                IIT Bombay, Civil Engineering Department
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="contact-form fade-up">
-                    <form id="contactForm">
-                        <div class="form-field">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your full name" required>
-                        </div>
-                        <div class="form-field">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
-                        </div>
-                        <div class="form-field">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" placeholder="What's this about?">
-                        </div>
-                        <div class="form-field">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" placeholder="Your message..." required></textarea>
-                        </div>
-                        <button type="submit" class="form-submit">
-                            Send Message
-                            <span class="iconify" data-icon="lucide:send" data-width="14" style="margin-left:8px"></span>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-inner">
-            <div class="footer-left">
-                © <span id="year">2026</span> Angshuman Baruah. All rights reserved.
-            </div>
-            <ul class="footer-socials">
-                <li>
-                    <a href="https://www.linkedin.com/in/angshuman-baruah-09/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                        <span class="iconify" data-icon="lucide:linkedin" data-width="16"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:angshumanbaruah12@gmail.com" aria-label="Email">
-                        <span class="iconify" data-icon="lucide:mail" data-width="16"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/angshuman-b" target="_blank" rel="noopener" aria-label="GitHub">
-                        <span class="iconify" data-icon="lucide:github" data-width="16"></span>
-                    </a>
-                </li>
+<section id="contact" class="tint">
+    <div class="container contact">
+        <div>
+            <p class="label">Contact</p>
+            <h2>Get in touch</h2>
+            <p>I'm happy to hear about research collaborations and academic opportunities.</p>
+            <ul class="contact-list">
+                <li><span>Institute email</span><a href="mailto:a.baruah@iitb.ac.in">a.baruah@iitb.ac.in</a></li>
+                <li><span>Personal email</span><a href="mailto:angshumanbaruah12@gmail.com">angshumanbaruah12@gmail.com</a></li>
+                <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/angshuman-baruah-09/" target="_blank" rel="noopener">linkedin.com/in/angshuman-baruah-09</a></li>
+                <li><span>Address</span><a href="https://www.civil.iitb.ac.in/" target="_blank" rel="noopener">Department of Civil Engineering, IIT Bombay</a></li>
             </ul>
         </div>
-    </footer>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your name" required>
+            <input type="email" id="email" placeholder="Your email" required>
+            <input type="text" id="subject" placeholder="Subject">
+            <textarea id="message" placeholder="Your message" required></textarea>
+            <button type="submit" class="btn">Send message</button>
+        </form>
+    </div>
+</section>
 
-    <!-- Toast notification -->
-    <div class="toast" id="toast"></div>
+<footer>© <span id="year">2026</span> Angshuman Baruah</footer>
+<div class="toast" id="toast"></div>
 
-    <!-- JavaScript -->
-    <script>
-        // ===== Footer year =====
-        document.getElementById('year').textContent = new Date().getFullYear();
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-        // ===== Navbar scroll effect =====
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 50);
-        });
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 10));
 
-        // ===== Mobile menu toggle =====
-        const navToggle = document.getElementById('navToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-        navToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('open');
-            const spans = navToggle.querySelectorAll('span');
-            if (mobileMenu.classList.contains('open')) {
-                spans[0].style.transform = 'rotate(45deg) translate(4px, 4px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(4px, -4px)';
-            } else {
-                spans[0].style.transform = '';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = '';
-            }
-        });
+    const navToggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    navToggle.addEventListener('click', () => {
+        const open = mobileMenu.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', open);
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+    }));
 
-        // Close mobile menu on link click
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('open');
-                const spans = navToggle.querySelectorAll('span');
-                spans[0].style.transform = '';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = '';
-            });
-        });
+    document.querySelectorAll('.tab').forEach(tab => tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.add('active');
+    }));
 
-        // ===== Publication tabs =====
-        const pubTabs = document.querySelectorAll('.pub-tab');
-        const pubPanels = document.querySelectorAll('.pub-panel');
-        pubTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                pubTabs.forEach(t => t.classList.remove('active'));
-                pubPanels.forEach(p => p.classList.remove('active'));
-                tab.classList.add('active');
-                document.getElementById(tab.dataset.tab).classList.add('active');
-            });
-        });
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
+        document.querySelectorAll('.nav-links a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+    });
 
-        // ===== Fade-up animation on scroll =====
-        const fadeUpElements = document.querySelectorAll('.fade-up');
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-        fadeUpElements.forEach(el => observer.observe(el));
-
-        // ===== Active nav link highlight =====
-        const sections = document.querySelectorAll('section[id]');
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                if (window.scrollY >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
-            });
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // ===== Contact form (client-side demo) =====
-        const contactForm = document.getElementById('contactForm');
-        const toast = document.getElementById('toast');
-
-        function showToast(message, duration = 3000) {
-            toast.textContent = message;
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), duration);
-        }
-
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-
-            if (!name || !email || !message) {
-                showToast('Please fill in all required fields.');
-                return;
-            }
-
-            // In production, replace this with a real backend (Formspree, EmailJS, etc.)
-            // For now, compose a mailto link as fallback
-            const subject = document.getElementById('subject').value.trim() || 'Portfolio Contact';
-            const mailtoLink = `mailto:angshumanbaruah12@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
-            window.location.href = mailtoLink;
-            showToast('Opening email client…');
-            contactForm.reset();
-        });
-    </script>
+    const toast = document.getElementById('toast');
+    function showToast(msg) { toast.textContent = msg; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 3000); }
+    document.getElementById('contactForm').addEventListener('submit', e => {
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+        if (!name || !email || !message) { showToast('Fill in your name, email and message.'); return; }
+        const subject = document.getElementById('subject').value.trim() || 'Website contact';
+        window.location.href = `mailto:angshumanbaruah12@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
+        showToast('Opening your email app…');
+        e.target.reset();
+    });
+</script>
 </body>
 </html>
