@@ -21,8 +21,8 @@
             --panel: #f2ece2;
             --white: #ffffff;
             --ink: #1c2a44;
-            --ink-soft: #4f5a70;
-            --muted: #858c99;
+            --ink-soft: #3e4859;
+            --muted: #626a79;
             --rule: #e7e0d5;
             --accent: #b0562f;
             --primary: #1c2a44;
@@ -36,18 +36,18 @@
         }
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; scroll-padding-top: 76px; }
-        body { font-family: var(--font-body); background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        body { font-family: var(--font-body); background: var(--paper); color: var(--ink); font-size: 17px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
         a { color: var(--accent); text-decoration: none; }
         a:hover { text-decoration: underline; text-underline-offset: 3px; }
         img { max-width: 100%; display: block; }
         ::selection { background: var(--accent-soft); }
         :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+        .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
 
         /* Nav */
         .nav { position: sticky; top: 0; z-index: 50; background: #1b2d4a; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid transparent; transition: border-color .3s; }
         .nav.scrolled { border-bottom-color: var(--rule); }
-        .nav-inner { max-width: 1000px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-inner { max-width: 1180px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
         .nav-name { font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--ink); }
         .nav-name:hover { text-decoration: none; }
         .nav-links { display: flex; gap: 22px; list-style: none; }
@@ -67,7 +67,7 @@
         .hero h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(38px, 6vw, 60px); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 16px; }
         .role { font-size: 16px; color: var(--ink-soft); margin-bottom: 22px; }
         .role strong { color: var(--ink); font-weight: 600; }
-        .intro { font-size: 17.5px; line-height: 1.75; color: var(--ink-soft); max-width: 34em; margin-bottom: 28px; }
+        .intro { font-size: 18.5px; line-height: 1.75; color: var(--ink-soft); max-width: 36em; margin-bottom: 28px; }
         .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; }
         .btn { display: inline-block; background: var(--primary); color: #fff; padding: 11px 22px; border-radius: 8px; font-size: 15px; font-weight: 500; transition: background .2s; }
         .btn:hover { background: #13203a; color: #fff; text-decoration: none; }
@@ -81,21 +81,21 @@
         section.tint { background: var(--panel); }
         .label { font-size: 12.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
         h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(27px, 4vw, 36px); line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 28px; }
-        .lead { font-size: 17px; color: var(--ink-soft); max-width: 40em; margin: -12px 0 36px; }
+        .lead { font-size: 18.5px; color: var(--ink-soft); max-width: 46em; margin: -12px 0 36px; }
 
         /* Research */
         .themes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
         .theme { border-top: 1px solid var(--ink); padding-top: 18px; }
         .theme svg { width: 26px; height: 26px; color: var(--accent); margin-bottom: 12px; }
-        .theme h3 { font-family: var(--font-display); font-weight: 500; font-size: 20px; line-height: 1.3; margin-bottom: 6px; }
-        .theme p { font-size: 15px; color: var(--ink-soft); }
+        .theme h3 { font-family: var(--font-display); font-weight: 500; font-size: 21px; line-height: 1.3; margin-bottom: 6px; }
+        .theme p { font-size: 16.5px; color: var(--ink-soft); }
         .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 36px; }
-        .chip { font-size: 14px; color: var(--ink-soft); background: var(--white); border: 1px solid var(--rule); border-radius: 999px; padding: 5px 14px; }
+        .chip { font-size: 15px; color: var(--ink-soft); background: var(--white); border: 1px solid var(--rule); border-radius: 999px; padding: 5px 14px; }
 
         /* Lists shared by news, publications, projects, awards */
         .rows { list-style: none; border-top: 1px solid var(--rule); }
         .rows > li { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 24px; padding: 18px 0; border-bottom: 1px solid var(--rule); }
-        .when { font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+        .when { font-size: 15px; color: var(--muted); font-variant-numeric: tabular-nums; }
         .rows p { color: var(--ink-soft); }
         .rows strong { color: var(--ink); font-weight: 600; }
 
@@ -107,26 +107,26 @@
         .tab.active .n { color: #cfc4b8; }
         .panel { display: none; }
         .panel.active { display: block; }
-        .pub .venue { font-size: 13.5px; font-weight: 600; color: var(--accent); line-height: 1.45; }
-        .pub-title { font-family: var(--font-display); font-size: 18px; font-weight: 500; line-height: 1.4; color: var(--ink); margin-bottom: 4px; }
-        .authors { font-size: 14.5px; color: var(--ink-soft); }
+        .pub .venue { font-size: 14.5px; font-weight: 600; color: var(--accent); line-height: 1.45; }
+        .pub-title { font-family: var(--font-display); font-size: 19.5px; font-weight: 500; line-height: 1.4; color: var(--ink); margin-bottom: 4px; }
+        .authors { font-size: 16px; color: var(--ink-soft); }
         .me { color: var(--ink); font-weight: 600; }
-        .status { display: inline-block; margin-top: 8px; font-size: 12.5px; font-weight: 500; padding: 2px 9px; border-radius: 6px; }
+        .status { display: inline-block; margin-top: 8px; font-size: 13.5px; font-weight: 500; padding: 2px 9px; border-radius: 6px; }
         .status.ok { background: var(--ok-soft); color: var(--ok); }
         .status.wait { background: var(--wait-soft); color: var(--wait); }
 
         /* Patents */
         .patents { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
         .patent { background: var(--white); border: 1px solid var(--rule); border-radius: 12px; padding: 22px 24px; }
-        .patent .meta { font-size: 13.5px; color: var(--muted); margin-bottom: 8px; font-variant-numeric: tabular-nums; }
-        .patent h3 { font-family: var(--font-display); font-weight: 500; font-size: 18.5px; line-height: 1.4; margin-bottom: 8px; }
-        .patent p { font-size: 14.5px; color: var(--ink-soft); }
+        .patent .meta { font-size: 15px; color: var(--muted); margin-bottom: 8px; font-variant-numeric: tabular-nums; }
+        .patent h3 { font-family: var(--font-display); font-weight: 500; font-size: 20px; line-height: 1.4; margin-bottom: 8px; }
+        .patent p { font-size: 16px; color: var(--ink-soft); }
 
         /* Projects */
         .projects { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; border-top: 1px solid var(--rule); }
         .projects li { padding: 16px 0; border-bottom: 1px solid var(--rule); }
-        .projects h3 { font-size: 15.5px; font-weight: 600; line-height: 1.45; margin-bottom: 2px; }
-        .projects p { font-size: 14px; color: var(--muted); }
+        .projects h3 { font-size: 17px; font-weight: 600; line-height: 1.45; margin-bottom: 2px; }
+        .projects p { font-size: 15.5px; color: var(--muted); }
 
         /* Journey */
         .journey { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; }
@@ -139,7 +139,7 @@
         .tl li:first-child::before { background: var(--accent); }
         .tl .when { display: block; margin-bottom: 2px; }
         .tl-title { font-weight: 600; line-height: 1.4; }
-        .tl-sub { font-size: 14.5px; color: var(--ink-soft); }
+        .tl-sub { font-size: 16px; color: var(--ink-soft); }
         .tl-sub a { color: var(--ink-soft); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
         .tl-sub a:hover { color: var(--accent); text-decoration-color: var(--accent); }
 
@@ -147,13 +147,18 @@
         .awards { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; border-top: 1px solid var(--rule); }
         .awards li { display: flex; justify-content: space-between; gap: 16px; padding: 15px 0; border-bottom: 1px solid var(--rule); }
         .award-title { font-weight: 600; line-height: 1.4; }
-        .award-org { font-size: 14px; color: var(--muted); }
+        .award-org { font-size: 15.5px; color: var(--muted); }
         .awards .when { flex: none; text-align: right; padding-top: 1px; }
 
         /* About me */
         .about { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; }
         .about h3 { font-size: 15px; font-weight: 600; margin-bottom: 12px; }
         .about .chips { margin-top: 0; }
+        .chip-break { flex-basis: 100%; height: 0; }
+        @media (max-width: 900px) { .chip-break { display: none; } }
+        .mentoring { list-style: none; border-top: 1px solid var(--rule); }
+        .mentoring li { padding: 12px 0; border-bottom: 1px solid var(--rule); color: var(--ink-soft); }
+        .mentoring strong { color: var(--ink); font-weight: 600; }
 
         /* Contact */
         .contact { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; }
@@ -161,7 +166,7 @@
         .contact-list { list-style: none; }
         .contact-list li { padding: 10px 0; border-bottom: 1px solid var(--rule); }
         .contact-list li:first-child { border-top: 1px solid var(--rule); }
-        .contact-list span { display: block; font-size: 13px; color: var(--muted); }
+        .contact-list span { display: block; font-size: 14px; color: var(--muted); }
         .contact-list a { color: var(--ink); overflow-wrap: anywhere; }
         .contact-list a:hover { color: var(--accent); }
         form { display: grid; gap: 12px; }
@@ -219,6 +224,20 @@
         .quick a:hover { color: #e3b07d; border-bottom-color: #e3b07d; }
         .btn { background: #1c2a44; }
         form .btn:hover { background: #13203a; }
+
+        /* Research media */
+        .research-top { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 48px; align-items: start; margin-bottom: 48px; }
+        .research-intro h2 { margin-bottom: 20px; }
+        .research-top .lead { margin: 0; }
+        .gallery { margin: 0; }
+        .g-frame { position: relative; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; background: #1b2d4a; }
+        .g-dots { position: absolute; left: 0; right: 0; bottom: 12px; display: flex; justify-content: center; gap: 8px; }
+        .g-dot { width: 9px; height: 9px; padding: 0; border: 0; border-radius: 50%; background: rgba(255,255,255,.55); cursor: pointer; transition: background .2s, width .2s; }
+        .g-dot:hover { background: rgba(255,255,255,.85); }
+        .g-dot.active { width: 22px; border-radius: 999px; background: #ffffff; }
+        .g-frame video, .g-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .g-frame img { object-fit: contain; background: #ffffff; }
+        @media (max-width: 900px) { .research-top { grid-template-columns: minmax(0, 1fr); gap: 24px; } }
     </style>
 </head>
 <body>
@@ -270,9 +289,28 @@
 
 <section id="research" class="tint">
     <div class="container">
-        <p class="label">Research</p>
-        <h2>What I work on</h2>
-        <p class="lead">I am working on a connected mobility testbed at IIT Bombay for evaluating connected and autonomous vehicles in mixed traffic. Alongside it, I work on planning, coordination and safety methods for these vehicles.</p>
+        <div class="research-top">
+            <div class="research-intro">
+            <p class="label">Research</p>
+            <h2>What I work on</h2>
+            <p class="lead">I am building a small-scale testbed at IIT Bombay for evaluating connected and autonomous vehicles in mixed traffic. On it, I work on motion planning, multi-vehicle coordination, safety evaluation and simulation studies. I am also mentoring the team developing an autonomous campus shuttle at IIT Bombay.</p>
+            </div>
+            <figure class="gallery" id="gallery">
+                <div class="g-frame">
+                    <video id="gVideo" src="media/testbed-video.mp4" poster="media/testbed-video-poster.jpg" autoplay muted playsinline preload="metadata" aria-label="Testbed video"></video>
+                    <img id="gImage" alt="Testbed photo" hidden>
+                    <div class="g-dots" role="group" aria-label="Choose video or photo">
+                        <button type="button" class="g-dot active" data-type="video" aria-label="Video" aria-pressed="true"></button>
+                        <button type="button" class="g-dot" data-type="image" data-src="media/testbed-1.jpg" data-alt="Testbed vehicle with its sensors labelled" aria-label="Photo 1: Testbed vehicle with its sensors labelled" aria-pressed="false"></button>
+                        <button type="button" class="g-dot" data-type="image" data-src="media/testbed-2.jpg" data-alt="Small-scale autonomous vehicle" aria-label="Photo 2: Small-scale autonomous vehicle" aria-pressed="false"></button>
+                        <button type="button" class="g-dot" data-type="image" data-src="media/testbed-3.jpg" data-alt="Vehicle on the testbed track" aria-label="Photo 3: Vehicle on the testbed track" aria-pressed="false"></button>
+                        <button type="button" class="g-dot" data-type="image" data-src="media/testbed-4.jpg" data-alt="Traffic sign detection from the vehicle camera" aria-label="Photo 4: Traffic sign detection from the vehicle camera" aria-pressed="false"></button>
+                        <button type="button" class="g-dot" data-type="image" data-src="media/testbed-5.jpg" data-alt="Simulation views of the testbed" aria-label="Photo 5: Simulation views of the testbed" aria-pressed="false"></button>
+                        <button type="button" class="g-dot" data-type="image" data-src="media/testbed-6.jpg" data-alt="LiDAR map of the IIT Bombay campus from the autonomous buggy" aria-label="Photo 6: LiDAR map of the IIT Bombay campus from the autonomous buggy" aria-pressed="false"></button>
+                    </div>
+                </div>
+            </figure>
+        </div>
         <div class="themes">
             <div class="theme">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M7 9h2M15 9h2M7 12h10"/></svg>
@@ -339,12 +377,12 @@
         <h2>Patents filed</h2>
         <div class="patents">
             <div class="patent">
-                <div class="meta">Application 202621056299 · Filed 04-05-2026</div>
+                <div class="meta">Application 202621056299 · Filed 4 May 2026</div>
                 <h3>Non-Visible Structured-Light Surface Sensing for Three-Dimensional Substrate Profiling and Liquid-Filled Void Detection</h3>
                 <p>Archak Mittal, <span class="me">Angshuman Baruah</span></p>
             </div>
             <div class="patent">
-                <div class="meta">Application 202621057198 · Filed 05-05-2026</div>
+                <div class="meta">Application 202621057198 · Filed 5 May 2026</div>
                 <h3>Low-Resource Modular Autonomous Vehicle Platform</h3>
                 <p>Archak Mittal, <span class="me">Angshuman Baruah</span></p>
             </div>
@@ -420,10 +458,11 @@
         <h2>Recent news</h2>
         <ul class="rows">
             <li><span class="when">Oct 2026</span><p>Presented <strong>"A Cyber-Physical Testbed for Development and Validation of Connected and Autonomous Mobility Systems"</strong> at ESTIC 2026, New Delhi.</p></li>
-            <li><span class="when">2026</span><p>Received the <strong>Bursary Award</strong> from the World Conference on Transport Research, Toulouse, France.</p></li>
+            <li><span class="when">Jul 2026</span><p>Received the <strong>Bursary Award</strong> from the World Conference on Transport Research, Toulouse, France.</p></li>
             <li><span class="when">Dec 2025</span><p>Research exchange at <strong>Tohoku University</strong>, Japan.</p></li>
-            <li><span class="when">2025</span><p>Won the <strong>Best Paper Award (2nd position)</strong> at the ITS India Congress, Hyderabad.</p></li>
-            <li><span class="when">2025</span><p>Awarded the <strong>FedEx Doctoral Fellowship</strong> (2025 to 2029) by IIT Bombay FedEx ALFA.</p></li>
+            <li><span class="when">Nov 2025</span><p>Won the <strong>Best Paper Award (2nd position)</strong> at the ITS India Congress, Hyderabad.</p></li>
+            <li><span class="when">Oct 2025</span><p>Awarded the <strong>FedEx Doctoral Fellowship</strong> (2025 to 2029) by IIT Bombay FedEx ALFA.</p></li>
+            <li><span class="when">Jan 2025</span><p>Research exchange at the <strong>University of the Bundeswehr Munich</strong>, Germany.</p></li>
         </ul>
     </div>
 </section>
@@ -434,16 +473,14 @@
         <h2>A little about me</h2>
         <div class="about">
             <div>
-                <h3>How I work</h3>
+                <h3>What I bring to the team</h3>
                 <div class="chips">
-                    <span class="chip">Leadership</span><span class="chip">Teamwork</span><span class="chip">Public Speaking</span><span class="chip">Interpersonal Skills</span><span class="chip">Collaboration</span><span class="chip">Critical Thinking</span><span class="chip">Adaptability</span>
+                    <span class="chip">Mentoring</span><span class="chip">Teamwork</span><span class="chip">Collaboration</span><span class="chip">Critical Thinking</span><span class="chip">Ownership</span><span class="chip">Adaptability</span>
                 </div>
             </div>
             <div>
                 <h3>When I'm not in the lab</h3>
-                <div class="chips">
-                    <span class="chip">Football</span><span class="chip">Swimming</span><span class="chip">Badminton</span><span class="chip">Reading</span><span class="chip">Travelling</span><span class="chip">Cooking</span>
-                </div>
+                <div class="chips"><span class="chip">Football</span><span class="chip">Swimming</span><span class="chip">Badminton</span><span class="chip">Reading</span><span class="chip-break" aria-hidden="true"></span><span class="chip">Travelling</span><span class="chip">Cooking</span></div>
             </div>
         </div>
     </div>
@@ -519,6 +556,31 @@
         showToast('Opening your email app…');
         e.target.reset();
     });
+    (function () {
+        const video = document.getElementById('gVideo');
+        const image = document.getElementById('gImage');
+        const dots = [...document.querySelectorAll('.g-dot')];
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let current = 0, timer = null;
+        if (reduce) { video.removeAttribute('autoplay'); video.pause(); video.loop = true; }
+        function show(i, auto) {
+            current = (i + dots.length) % dots.length;
+            clearTimeout(timer);
+            dots.forEach((d, k) => { d.classList.toggle('active', k === current); d.setAttribute('aria-pressed', k === current); });
+            const d = dots[current];
+            if (d.dataset.type === 'video') {
+                image.hidden = true; video.hidden = false;
+                video.currentTime = 0;
+                if (!reduce) video.play().catch(() => {});
+            } else {
+                video.pause(); video.hidden = true;
+                image.src = d.dataset.src; image.alt = d.dataset.alt || ''; image.hidden = false;
+                if (!reduce) timer = setTimeout(() => show(current + 1, true), 4000);
+            }
+        }
+        video.addEventListener('ended', () => { if (!reduce) show(current + 1, true); });
+        dots.forEach((d, k) => d.addEventListener('click', () => show(k)));
+    })();
 </script>
 </body>
 </html>
